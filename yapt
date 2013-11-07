@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# yapt
+#
+# yum-style apt-[get|cache] commands
+
+
+[ "$1" = "update" ] && apt-get update;
+[ "$1" = "upgrade" ] && apt-get upgrade;
+
+[ "$1" = "install" ] && apt-get install $2;
+[ "$1" = "reinstall" ] && apt-get --reinstall install $2;
+[ "$1" = "remove" ] && apt-get remove $2;
+
+[ "$1" = "search" ] && apt-cache search $2;
+[ "$1" = "show" ] && apt-cache show $2;
